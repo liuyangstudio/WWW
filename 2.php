@@ -12,3 +12,9 @@ echo mt_rand(0,255).','  ;
 echo 'mt_rand(1,255)'.','.'mt_rand(1,255)'.','.'mt_rand(1,255)';
 
 echo mt_rand(1000, 9999);
+echo mt_rand(1000, 9999);
+echo mt_rand(1000, 9999);
+echo mt_rand(1000, 9999);
+echo mt_rand(1000, 9999);
+echo mt_rand(1000, 9999);
+echo mt_rand(1000, 9999);
