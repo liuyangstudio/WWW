@@ -17,6 +17,8 @@
 
 
 <?php
+error_reporting(0);      //总是报错，所以加了个报错函数
+
 $num = $_POST['num'];
 
 if ($_POST['jin']) {                   //输出 金字塔

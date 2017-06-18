@@ -12,17 +12,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="1.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="1.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="336">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding>
-                <marker date="1497768029453" expanded="true" signature="570:584" ph="..." />
-                <marker date="1497768029453" expanded="true" signature="1003:1017" ph="..." />
-                <marker date="1497768029453" expanded="true" signature="1208:1222" ph="..." />
-                <marker date="1497768029453" expanded="true" signature="1458:1472" ph="..." />
-                <marker date="1497768029453" expanded="true" signature="1679:1693" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="613:627" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1046:1060" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1251:1265" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1501:1515" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1722:1736" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.php" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <marker date="1497768507641" expanded="true" signature="613:627" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1046:1060" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1251:1265" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1501:1515" ph="..." />
+                <marker date="1497768507641" expanded="true" signature="1722:1736" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,10 +121,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\刘洋\Desktop" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -219,15 +240,15 @@
       <workItem from="1497577320252" duration="8147000" />
       <workItem from="1497593870606" duration="2092000" />
       <workItem from="1497597615227" duration="4398000" />
-      <workItem from="1497750113247" duration="14680000" />
+      <workItem from="1497750113247" duration="15172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31886000" />
+    <option name="totallyTimeSpent" value="32378000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25641027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -279,11 +300,11 @@
         <state relative-caret-position="168">
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
-            <marker date="1497768029453" expanded="true" signature="570:584" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1003:1017" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1208:1222" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1458:1472" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1679:1693" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="613:627" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1046:1060" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1251:1265" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1501:1515" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1722:1736" ph="..." />
           </folding>
         </state>
       </provider>
@@ -541,14 +562,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="336">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
           <folding>
-            <marker date="1497768029453" expanded="true" signature="570:584" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1003:1017" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1208:1222" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1458:1472" ph="..." />
-            <marker date="1497768029453" expanded="true" signature="1679:1693" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="613:627" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1046:1060" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1251:1265" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1501:1515" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1722:1736" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <marker date="1497768507641" expanded="true" signature="613:627" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1046:1060" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1251:1265" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1501:1515" ph="..." />
+            <marker date="1497768507641" expanded="true" signature="1722:1736" ph="..." />
           </folding>
         </state>
       </provider>
