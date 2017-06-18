@@ -1,8 +1,13 @@
 <?php
-echo date('Y-i.s,H');
-/**
- * Created by PhpStorm.
- * User: 刘洋
- * Date: 2017/6/16
- * Time: 16:54
- */
+echo "<table border='1' cellspacing='0'> ";
+
+for ($i = 1; $i <= 9; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= $i; $j++) {
+        echo "<td> $j&times;$i=" . $i * $j . " </td>";
+    }
+    echo "<tr/>";
+}
+
+
+echo "</table>";
