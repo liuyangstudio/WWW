@@ -17,50 +17,60 @@
 
 
 <?php
-$num=$_POST['num'];
+$num = $_POST['num'];
 
 if ($_POST['jin']) {                   //输出 金字塔
-    for ($i = 1; $i <= $num; $i++) {
-        for ($l = ($num - $i) - 1; $l >= 0; $l--) {
-            echo '<span style="color: #FFFFFF">*</span>';
+
+    if (is_numeric($num)) {
+        for ($i = 1; $i <= $num; $i++) {
+            for ($l = ($num - $i) - 1; $l >= 0; $l--) {
+                echo '<span style="color: #FFFFFF">*</span>';
+            }
+            for ($j = 1; $j <= 2 * $i - 1; $j++) {
+                echo '*';
+            }
+            echo "<br>";
         }
-        for ($j = 1; $j <= 2 * $i - 1; $j++) {
-            echo '*';
-        }
-        echo "<br>";
+
+    } else {
+        echo '请输入正确的数字';
     }
+
 
 } else if ($_POST['ling']) {           //输出 空心菱形
-    for ($i = 1; $i <= $num; $i++) {   //上半部分
+    if (is_numeric($num)) {
+        for ($i = 1; $i <= $num; $i++) {   //上半部分
 
-        for ($l = ($num - $i) - 1; $l >= 0; $l--) {
-            echo '<span style="color: #FFFFFF">*</span>';
-        }
-        echo '*';
-        if ($i == 1) {
-        } else {
-            for ($q = 1; $q <= 2 * $i - 3; $q++) {
+            for ($l = ($num - $i) - 1; $l >= 0; $l--) {
                 echo '<span style="color: #FFFFFF">*</span>';
             }
             echo '*';
+            if ($i == 1) {
+            } else {
+                for ($q = 1; $q <= 2 * $i - 3; $q++) {
+                    echo '<span style="color: #FFFFFF">*</span>';
+                }
+                echo '*';
+            }
+            echo "<br>";
         }
-        echo "<br>";
-    }
-    for ($i = 1; $i <= $num - 1; $i++) {//下半部分
+        for ($i = 1; $i <= $num - 1; $i++) {//下半部分
 
-        for ($l = 1; $l <= $i; $l++) {
-            echo '<span style="color: #FFFFFF">*</span>';
-        }
-        echo '*';
-        if ($i == $num - 1) {
-        } else {
-            for ($q = 2 * ($num - $i) - 4; $q >= 0; $q--) {
+            for ($l = 1; $l <= $i; $l++) {
                 echo '<span style="color: #FFFFFF">*</span>';
             }
             echo '*';
+            if ($i == $num - 1) {
+            } else {
+                for ($q = 2 * ($num - $i) - 4; $q >= 0; $q--) {
+                    echo '<span style="color: #FFFFFF">*</span>';
+                }
+                echo '*';
+            }
+            echo "<br>";
         }
-        echo "<br>";
+    } else {
+        echo '请输入正确的数字';
     }
 }
-
 ?>
