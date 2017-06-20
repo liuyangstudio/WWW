@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <title>留言板</title>
     <style type="text/css">
+        a {
+            color: #0a6aff;
+        }
+
+        a:visited {
+            color: #0a6aff;
+
+        }
+
         header {
             height: 200px;
             text-align: center;
@@ -29,6 +38,7 @@
 
         table {
             width: 80%;
+            margin: 0 auto;
             text-align: left;
             border: 1px solid #000000;
             border-spacing: 0;
@@ -36,13 +46,40 @@
 
         thead th {
             border: 2px solid #000000;
+            text-align: center;
         }
 
         tbody td {
             border: 1px solid #000;
+            text-align: center;
+        }
+
+        thead .ind {
+            width: 3%;
+
+        }
+
+        thead .user {
+            width: 8%;
+
+        }
+
+        thead .tit {
+            width: 15%;
+        }
+
+        thead .time {
+            width: 10%;
+        }
+
+        thead .control {
+            width: 7%;
         }
 
         .add {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
             display: block;
             width: 85px;
             height: 25px;
@@ -55,13 +92,15 @@
             border-radius: 3px;
 
         }
-.add:visited{
-    color: #000;
-}
+
+        .add:visited {
+            color: #000;
+        }
+
         .add:hover {
             color: #FFFFFF;
             background-color: #0f86ff;
-            box-shadow: -1px -1px  5px 2px #000000;
+            box-shadow: -1px -1px 5px 2px #000000;
         }
     </style>
 </head>
@@ -82,12 +121,12 @@
 <table>
     <thead>
     <tr>
-        <th>编号</th>
-        <th>用户名</th>
-        <th>标题</th>
-        <th>内容</th>
-        <th>发布时间</th>
-        <th>操作</th>
+        <th class="ind">编号</th>
+        <th class="user">用户名</th>
+        <th class="tit">标题</th>
+        <th class="con">内容</th>
+        <th class="time">发布时间</th>
+        <th class="control">操作</th>
     </tr>
     </thead>
     <tbody>
@@ -97,18 +136,20 @@
     $msg = file_get_contents('msg.txt');
     $arr = unserialize($msg);
     $i = 1;
-    foreach ($arr as $key => $d) {       //遍历数组，键名用于删除和编辑，键值用于输出表格。
+    foreach ($arr as $key => $d) {
 
-        echo '
+        echo '                         
     <tr>
         <td>' . $i . '</td>
         <td>' . $d['user'] . '</td>
         <td>' . $d['title'] . '</td>
         <td>' . $d['content'] . '</td>
         <td>' . date('m月d日  H:i:s', $d['time']) . '</td>
-        <td><a href="edit.php?id=' . $key . '">编辑</a>| <a href="delete.php?id=' . $key . '">删除</a></td>
+        <td>
+        <a href="edit.php?id=' . $key . '">编辑</a>| <a href="delete.php?id=' . $key . '">删除</a>
+        </td>
     </tr>';
-        $i++;
+        $i++;            //编号每输出一次加一。
     }
     ?>
     </tbody>

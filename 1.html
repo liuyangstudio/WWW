@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-
+<a href="javascript:del()" >qq</a>
 </body>
+<script>
+    function del() {
+        if (confirm("确认删除么？")) {
+            window.location.href="delete.php";
+            return true;
+        } else return false;
+
+    }
+</script>
 </html>

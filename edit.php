@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>添加留言</title>
+    <title>编辑留言</title>
     <style type="text/css">
         header {
             height: 200px;
@@ -73,47 +73,45 @@
         <label> 标题</label>
         <label> 内容 </label>
     </div>
+    <?php
+    date_default_timezone_set('Asia/Shanghai');
+    $id = $_GET['id'];                       //接收主页传来的键名。
+    $msg = file_get_contents('msg.txt');
+    $array = unserialize($msg);
+    $arr = $array[$id];
+    $uuser = $arr['user'];            //获取修改前的资料。
+    $ttitle = $arr['title'];
+    $ccontent = $arr['content'];
+
+    if (isset($_POST['sub'])) {
+        $user = strip_tags($_POST['user']);
+        $title = strip_tags($_POST['title']);
+        $content = strip_tags($_POST['content']);
+        $time = time();
+        $array[$id] = compact('user', 'title', 'content', 'time');    //把编辑完成的新资料重新录入到该数组中。
+        $msgs = serialize($array);
+        if (file_put_contents('msg.txt', $msgs)) {
+            echo '<script> alert("发布成功！");window.location.href="index.php";</script>';
+        } else {
+            echo '<script> alert("发布失败~~");window.location.href="#";</script>';
+        }
 
 
+    }
+
+    ?>
+
     <div>
-        <input type="text" name="user" required>
+        <input type="text" name="user" value="<?php echo $uuser; ?>" required>            //把老资料写入表单中。
     </div>
     <div>
-        <input type="text" name="title" size="35" required>
+        <input type="text" name="title" size="35" value="<?php echo $ttitle; ?>" required>
     </div>
     <div>
-        <textarea name="content" rows="10" cols="50" required></textarea>
+        <textarea name="content" rows="10" cols="50" required><?php echo $ccontent; ?></textarea>
     </div>
     <input id="sub" name="sub" type="submit" value="发布">
 </form>
 </body>
 </html>
 
-<?php
-$arr = [];
-date_default_timezone_set('Asia/Shanghai');
-$msg = file_get_contents('msg.txt');
-if (strlen($msg)) {
-    $arr = unserialize($msg);
-}
-
-
-if (isset($_POST['sub'])) {
-
-    $user = strip_tags($_POST['user']);
-    $title = strip_tags($_POST['title']);
-    $content = strip_tags($_POST['content']);
-    $time = time();
-
-    $data = compact('user', 'title', 'content', 'time');
-    array_push($arr, $data);
-    $msgs = serialize($arr);
-    if (file_put_contents('msg.txt', $msgs)) {
-        echo '<script> alert("发布成功！");window.location.href="index.php";</script>';
-    }
-
-
-}
-
-
-?>
