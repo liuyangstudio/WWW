@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="1.php">
+<form method="post" action="homework-1.php">
 
     <input type="text" name="num" placeholder="请输入一个整数"><br>
     <input type="submit" name="jin" value="金字塔">
