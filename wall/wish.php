@@ -158,7 +158,7 @@
 	<div id='top'></div>
 	<div id="content">
 		<div class="c-top"></div>
-		<form action="index.php" method="post" id="myfrom">
+		<form action="add.php" method="post" id="myfrom">
 			<div class="c-content">
 				<div class="papercolor">
 					<div class="p-left">
@@ -263,7 +263,7 @@
 		}
 
 		$( '.input' ).click( function () {
-			window.location.href="add.php";
+			window.location.href="index.php";
 		} );
 			
 	</script>
