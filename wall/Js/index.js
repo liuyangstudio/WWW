@@ -20,6 +20,9 @@ $(function () {
 		$( this ).css( 'z-index', 1 ).siblings().css( 'z-index', 0 );
 	} );
 
+
+
+
 	$( '.close' ).click( function () {
 		$( this ).parents( 'dl' ).fadeOut('slow');
 		return false;

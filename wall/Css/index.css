@@ -196,8 +196,8 @@ input[type="text"]:focus{
 	background: url(../Images/a1_3.gif) no-repeat;
 }
 .a2 dt {
-	background: url(../Images/a2_1.gif);
-}
+	 background: url(../Images/a2_1.gif);
+ }
 .a2 .content {
 	background : url(../Images/a2_2.gif) repeat-y -2px;
 }
