@@ -28,8 +28,8 @@
         </dt>
         <dd class='content'>" . $arr['content'] . "</dd>
         <dd class='bottom'>
-            <span class='time'>今天08:30</span>
-            <a href=\"delete.php\"   class='close'> </a>
+            <span class='time'>".$arr['time']."</span>
+            <a href=\"delete.php?id=".$arr['id']."\"   class='close'> </a>
         </dd>
     </dl>";
 

@@ -1,0 +1,14 @@
+===数据库 wall
+
+== 表的结构 wall
+
+|------
+|字段|类型|空|默认
+|------
+|//**id**//|tinyint(3)|否|
+|name|varchar(20)|是|NULL
+|content|mediumtext|是|NULL
+|color|varchar(8)|是|a1
+|time|datetime|是|NULL
+== 转存表中的数据 wall
+

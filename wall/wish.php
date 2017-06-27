@@ -209,7 +209,7 @@
 						<input id="codeone" type="text" name="recode" value=""><span></span>
 					</div>
 					<div class="code-right">
-						<input id="codetwo" type="text" name="code" value="<?php echo mt_rand(1000,9999); ?>" readonly>
+						<input id="codetwo" type="text" name="code" value="<?php echo mt_rand(1000,9999); ?>" readonly required>
 					</div>				
 				</div>
 				<!--<div class="submit"><button type="submit" style="width:174px;height:38px"></button></div>-->
