@@ -12,12 +12,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="6.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/6.php">
+      <file leaf-file-name="Register.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/001/Register.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-              <folding />
+              <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+              <folding>
+                <marker date="1498635634725" expanded="true" signature="1241:1256" ph="..." />
+                <marker date="1498635634725" expanded="true" signature="1393:1431" ph="..." />
+                <marker date="1498635634725" expanded="true" signature="1393:3672" ph="..." />
+                <marker date="1498635634725" expanded="true" signature="1638:1716" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="1747:1808" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="1838:2230" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="1871:1942" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="1974:2048" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2081:2154" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2160:2224" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2263:2342" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2374:2434" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2465:3037" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2497:2614" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2646:2765" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2798:2916" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="2922:3031" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="3070:3136" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="3167:3661" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="3206:3286" ph="{...}" />
+                <marker date="1498635634725" expanded="true" signature="3292:3653" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +92,9 @@
         <option value="$PROJECT_DIR$/5.php" />
         <option value="$PROJECT_DIR$/1.html" />
         <option value="$PROJECT_DIR$/lunbotu/index.php" />
+        <option value="$PROJECT_DIR$/注册页面个人版.html" />
         <option value="$PROJECT_DIR$/6.php" />
+        <option value="$PROJECT_DIR$/001/Register.php" />
       </list>
     </option>
   </component>
@@ -117,6 +141,34 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lunbotu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="001" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -130,11 +182,11 @@
     <property name="SearchEverywhereHistoryKey" value="fade&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\刘洋\Desktop" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\wamp\www\lunbotu" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\刘洋\Desktop" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -260,12 +312,12 @@
       <workItem from="1498185240837" duration="5578000" />
       <workItem from="1498435448718" duration="18935000" />
       <workItem from="1498523382343" duration="6378000" />
-      <workItem from="1498614675075" duration="1269000" />
+      <workItem from="1498614675075" duration="17871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114477000" />
+    <option name="totallyTimeSpent" value="131079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -304,19 +356,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/1.php" />
-    <entry file="file://$PROJECT_DIR$/2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework-1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -439,11 +483,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.348.2056/HZ$D.348.2057/arr_apply/doReg.php" />
-    <entry file="file://$PROJECT_DIR$/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/delete.php" />
     <entry file="file://$PROJECT_DIR$/edit.php" />
     <entry file="file://$PROJECT_DIR$/add.php" />
@@ -516,6 +555,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="237" column="10" lean-forward="false" selection-start-line="237" selection-start-column="10" selection-end-line="237" selection-end-column="10" />
+          <folding>
+            <marker date="1498115550958" expanded="true" signature="5453:5530" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -600,11 +642,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/注册页面个人版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2232">
+          <caret line="105" column="29" lean-forward="true" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/6.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="192">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/001/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+          <folding>
+            <marker date="1498635634725" expanded="true" signature="1241:1256" ph="..." />
+            <marker date="1498635634725" expanded="true" signature="1393:1431" ph="..." />
+            <marker date="1498635634725" expanded="true" signature="1393:3672" ph="..." />
+            <marker date="1498635634725" expanded="true" signature="1638:1716" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="1747:1808" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="1838:2230" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="1871:1942" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="1974:2048" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2081:2154" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2160:2224" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2263:2342" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2374:2434" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2465:3037" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2497:2614" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2646:2765" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2798:2916" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="2922:3031" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="3070:3136" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="3167:3661" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="3206:3286" ph="{...}" />
+            <marker date="1498635634725" expanded="true" signature="3292:3653" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
