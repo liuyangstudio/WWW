@@ -34,7 +34,7 @@
 <div id="banner">
     <ul id="box">
 
-        <li><img src="golf%20(1).jpg" alt=""></li>
+        <li ><img src="golf%20(1).jpg" alt=""></li>
         <li><img src="golf%20(2).jpg" alt=""></li>
         <li><img src="golf%20(3).jpg" alt=""></li>
         <li><img src="golf%20(4).jpg" alt=""></li>
@@ -47,70 +47,39 @@
 </body>
 
 <script>
-    function fadeIn(x) {
-        x.style.opacity = 0;
-        var alpha = 0.1;
-        for (var i = 1; i < 20; i++) {
-
-
-            setTimeout(function ()
-            {
-                alpha = alpha + 0.1;
-               x.style.opacity = alpha;
+    function fadein(element, speed, time) {
+        element.style.display = 'block';
+        element.style.opacity = 0;
+        var alpha = 0;
+        timer = setInterval(function () {
+            if (alpha > 0.9) {
+                clearInterval(timer);
+            } else {
+                alpha = alpha + speed;
             }
-        ,
-            300
-        )
-        }
-
-
-
+            element.style.opacity = alpha;
+        }, time)
     }
 
 
-    var li = document.getElementsByTagName('li');
 
-    fadeIn(li);
+
+
+
+    var li = document.getElementsByTagName('li');
+    var ind = 0;
+    setInterval(function () {
+        for (var i = 0; i < li.length; i++) {
+            li[i].style.display='none';
+        }
+        fadein(li[ind], 0.2, 80);
+        if (ind>3) {
+            ind=0
+        }else{ind++}
+    }, 2000)
+
 
 </script>
-
-
-<!--<script>-->
-<!---->
-<!--    var img = document.getElementsByTagName('li');-->
-<!--    var ind = 0;-->
-<!--    function fade(x, y, speed,time) {-->
-<!--        setInterval(function () {-->
-<!--            var alpha = x;-->
-<!--            if (x < y) {-->
-<!--                x = x + speed-->
-<!--            }-->
-<!--            return x;-->
-<!---->
-<!---->
-<!--        },time)-->
-<!---->
-<!--    }-->
-<!---->
-<!--    console.log(fade(1,100,5,300))-->
-<!--    timer = setInterval(function () {-->
-<!---->
-<!--        for (var i = 0; i < img.length; i++) {-->
-<!--            img[i].style.opacity = 0;-->
-<!--        }-->
-<!--         var alpha=fade(0,1,0.1,300);-->
-<!--        img[ind].style.opacity = alpha;-->
-<!---->
-<!---->
-<!--        if (ind > 3) {-->
-<!--            ind = 0-->
-<!--        } else {-->
-<!--            ind++-->
-<!--        }-->
-<!---->
-<!---->
-<!--    }, 300)-->
-<!---->
-<!---->
-<!--</script>-->
 </html>
+
+
