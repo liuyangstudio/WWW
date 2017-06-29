@@ -1,8 +1,38 @@
+<?php
+session_start();
+$uninfo = '';
+
+if (@$_POST['sub']) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $pw = password_hash($password, 1);
+    $link = mysqli_connect('localhost', 'root', '84708597', 'web');
+    $query = 'select id from user where username= "' . $username . '"';
+    $data = mysqli_query($link, $query);
+    $arr = mysqli_fetch_all($data, MYSQLI_ASSOC);
+    if ($arr) {
+        $_SESSION['username'] = $username;
+        $_SESSION['uid'] = $arr['id'];
+    } else {
+        echo '<script>
+alert=("用户名或密码错误，请重试；");
+</script>';
+    }
+
+
+    mysqli_close($link);
+
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>用户注册</title>
+    <title>登录</title>
     <style>
         * {
             margin: 0;
@@ -29,26 +59,6 @@
             box-shadow: 0 2px 5px #c3c3c3;
             margin-top: 25px;
         }
-
-        .login a {
-            padding: 2px 5px;
-            border: 1px solid #d7d7d7;
-            background-color: #e2e2e2;
-            border-radius: 9px;
-        }
-
-        .login a:hover {
-            background-color: #ff8d00;
-            color: #fff;
-        }
-
-        .login {
-            margin-bottom: 5px;
-            float: right;
-            margin-right: 150px;
-        }
-
-        /*注册框*/
 
         .register {
             width: 1000px;
@@ -101,14 +111,14 @@
         .info {
             width: 400px;
             float: left;
-            height: 135px;
+            height: 70px;
         }
 
         span {
             display: block;
             color: #ff0000;
-            height: 45px;
-            line-height: 45px;
+            height: 35px;
+            line-height: 35px;
         }
 
         i {
@@ -133,51 +143,42 @@
             background-position: 0 -50px;
         }
 
-
     </style>
 </head>
 <body>
 <header>
-    <h1>注册帐号</h1>
-    <p class="login">我已注册，现在就<a href="signin.php">登录</a></p>
+    <h1>登录</h1>
+
     <p class="line"></p>
 
 
 </header>
-
-
-
-
 <div class="register">
-    <form action="Register.php" method="post" onsubmit="return check()">
+    <form action="signin.php" method="post" onsubmit="return check()">
 
 
-        <label>用户名</label> <input type="text" id="un" name="username" placeholder="请设置用户名" value="" maxlength="15"
+        <label>用户名</label> <input type="text" id="un" name="username" placeholder="请输入用户名" value="" maxlength="15"
                                   required>
         <br>
 
-        <label>密码</label> <input type="password" id="pw1" name="password" placeholder="请设置登录密码" value="" maxlength="15"
+        <label>密码</label> <input type="password" id="pw1" name="password" placeholder="请输入登录密码" value="" maxlength="15"
                                  required>
         <br>
 
-        <label>确认密码</label> <input type="password" id="pw2" name="password2" placeholder="请确认登录密码" value="" disabled
-                                   maxlength="15">
-        <br>
-        <input type="submit" id="sub" value="注册" name="sub">
+
+        <input type="submit" id="sub" value="登录" name="sub">
 
     </form>
 </div>
 <div class="info">
     <span>&nbsp;</span>
     <span>&nbsp;</span>
-    <span>&nbsp;</span>
-</div>
 
+</div>
 </body>
 <script>
     var un = document.getElementById('un');
     var pw1 = document.getElementById('pw1');
-    var pw2 = document.getElementById('pw2');
     var span = document.getElementsByTagName('span');
     var unreg = /[^A-Za-z0-9]/;
     /*提交表单时，检查用户名与密码是否合法*/
@@ -188,7 +189,6 @@
         } else if (un.value.length < 5 || pw1.value.length < 6) {
             return false;
         }
-
     }
 
 
@@ -225,12 +225,10 @@
     pw1.onkeyup = function () {
         if (unreg.test(this.value) || this.value.length < 6) {
             span[1].innerHTML = '<i class=notic></i>长度6-15位，只支持数字和大小写字母';
-            pw2.setAttribute('disabled', '');
             this.style.borderColor = '#ff0000';
             this.style.outlineColor = '#ff0000';
         } else if (this.value.length > 5) {
             span[1].innerHTML = '<i class=ok></i>';
-            pw2.removeAttribute('disabled');
             this.style.borderColor = '#adadad';
             this.style.outlineColor = '#000000';
         }
@@ -238,83 +236,22 @@
 
     pw1.onblur = function () {
         if (this.value == '') {
-            pw2.setAttribute('disabled', '');
             span[1].innerHTML = '<i class=warn></i>密码不能为空';
             this.style.borderColor = '#ff0000';
         } else if (unreg.test(this.value)) {
-            pw2.setAttribute('disabled', '');
             span[1].innerHTML = '<i class=warn></i>只能使用数字和字母';
             this.style.borderColor = '#ff0000';
         } else if (this.value.length < 5) {
-            pw2.setAttribute('disabled', '');
             span[1].innerHTML = '<i class=warn></i>密码至少为6位';
             this.style.borderColor = '#ff0000';
         } else {
-            pw2.removeAttribute('disabled');
             span[1].innerHTML = '<i class=ok></i>';
             this.style.borderColor = '#adadad';
         }
-        if (this.value != pw2.value) {
-            span[2].innerHTML = '<i class=warn></i>两次输入的密码不一致，请重新输入'
-        }
 
 
     };
-
-
-    pw2.onkeyup = function () {
-
-        if (this.value != pw1.value) {
-            span[2].innerHTML = '<i class=warn></i>两次输入的密码不一致，请重新输入';
-            this.style.borderColor = '#ff0000';
-            this.style.outlineColor = '#ff0000';
-        } else {
-            span[2].innerHTML = '<i class=ok></i>';
-            this.style.borderColor = '#adadad';
-            this.style.outlineColor = '#000000';
-        }
-    };
-    pw2.onblur = function () {
-        if (this.value != pw1.value) {
-            span[2].innerHTML = '<i class=warn></i>两次输入的密码不一致，请重新输入';
-            this.style.borderColor = '#ff0000';
-        } else {
-            span[2].innerHTML = '<i class=ok></i>';
-            this.style.borderColor = '#adadad';
-        }
-    }
 
 
 </script>
 </html>
-
-
-<?php
-
-
-if (@$_POST['sub']) {
-
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $pw = password_hash($password, 1);
-
-    $link = mysqli_connect('localhost', 'root', '84708597', 'web');
-    $query = 'insert user (username,password) values("' . $username . '","' . $pw . '")';
-    if (mysqli_query($link, $query)) {
-        echo '<script>  alert("注册成功！");
-window.location.href="signin.php";
-</script>';
-
-    } else {
-        echo '<script>  alert("fail~~~")</script>';
-    }
-
-
-    mysqli_close($link);
-
-
-}
-
-
-?>
