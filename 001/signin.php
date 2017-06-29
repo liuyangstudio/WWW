@@ -6,17 +6,21 @@ if (@$_POST['sub']) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $pw = password_hash($password, 1);
+
     $link = mysqli_connect('localhost', 'root', '84708597', 'web');
-    $query = 'select id from user where username= "' . $username . '"';
-    $data = mysqli_query($link, $query);
+//    $query = 'select id from user where username="' . $username .'"';
+    $str = "select id from user where username='" . $username . "'and password='" . $pw . "'";
+    $data = mysqli_query($link, $str);
     $arr = mysqli_fetch_all($data, MYSQLI_ASSOC);
+    print_r($arr);
+
     if ($arr) {
-        $_SESSION['username'] = $username;
-        $_SESSION['uid'] = $arr['id'];
+//        $_SESSION['username'] = $username;
+//        $_SESSION['uid'] = $arr[0]['id'];
+//        header("Location:index.php");
     } else {
-        echo '<script>
-alert=("用户名或密码错误，请重试；");
-</script>';
+        echo ' <script>
+alert = ("用户名或密码错误，请重试；");</script> ';
     }
 
 
@@ -111,14 +115,14 @@ alert=("用户名或密码错误，请重试；");
         .info {
             width: 400px;
             float: left;
-            height: 70px;
+            height: 90px;
         }
 
         span {
             display: block;
             color: #ff0000;
-            height: 35px;
-            line-height: 35px;
+            height: 45px;
+            line-height: 45px;
         }
 
         i {
@@ -183,6 +187,8 @@ alert=("用户名或密码错误，请重试；");
     var unreg = /[^A-Za-z0-9]/;
     /*提交表单时，检查用户名与密码是否合法*/
     function check() {
+        var unreg = /[^A-Za-z0-9]/;
+
         if (unreg.test(un.value) || unreg.test(pw1.value) || pw1.value !== pw2.value) {
             console.log(1312);
             return false;
@@ -194,7 +200,7 @@ alert=("用户名或密码错误，请重试；");
 
     un.onkeyup = function () {
         if (unreg.test(this.value) || this.value.length < 5) {
-            span[0].innerHTML = '<i class=notic></i>长度5-15位，只支持数字和大小写字母';
+            span[0].innerHTML = ' < i class=notic ></i > 长度5 - 15位，只支持数字和大小写字母';
             this.style.borderColor = '#ff0000';
             this.style.outlineColor = '#ff0000';
         } else if (this.value.length > 4) {
