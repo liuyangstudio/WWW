@@ -1,5 +1,8 @@
 <?php
+session_start();
 
-echo "主页";
+
+
+echo $_SESSION['user'];
 
 ?>

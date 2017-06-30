@@ -1,26 +1,36 @@
 <?php
 session_start();
-$uninfo = '';
 
-if (@$_POST['sub']) {
+
+if (!empty($_SESSION['user'])) {
+    echo'<script>alert("已登录");window.location.href="index.php";</script>';
+    exit;
+}
+
+if (isset($_POST['sub'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $pw = password_hash($password, 1);
+
 
     $link = mysqli_connect('localhost', 'root', '84708597', 'web');
-//    $query = 'select id from user where username="' . $username .'"';
-    $str = "select id from user where username='" . $username . "'and password='" . $pw . "'";
+    $str = 'SELECT id,password FROM user WHERE username="' . $username . '"';
     $data = mysqli_query($link, $str);
-    $arr = mysqli_fetch_all($data, MYSQLI_ASSOC);
-    print_r($arr);
+    $array = mysqli_fetch_all($data, MYSQLI_ASSOC);
 
-    if ($arr) {
-//        $_SESSION['username'] = $username;
-//        $_SESSION['uid'] = $arr[0]['id'];
-//        header("Location:index.php");
+    if ($array) {
+        if (password_verify($password, $array[0]['password'])) {
+
+            $_SESSION['user'] = $username;
+            $_SESSION['uid'] = $array[0]['id'];
+            echo '<script>alert("'.$username.'欢迎回来!");window.location.href="index.php"</script>';
+
+
+        } else {
+            echo '<script>alert("密码错误，请重试！");window.location.href="signin.php";</script>';
+        }
     } else {
-        echo ' <script>
-alert = ("用户名或密码错误，请重试；");</script> ';
+        echo '<script>alert("用户' . $username . '不存在，请重试！");window.location.href="signin.php";</script>';
+        exit;
     }
 
 
@@ -170,7 +180,7 @@ alert = ("用户名或密码错误，请重试；");</script> ';
         <br>
 
 
-        <input type="submit" id="sub" value="登录" name="sub">
+        <input type="submit" id="sub" value="登录" name="sub" >
 
     </form>
 </div>
@@ -189,8 +199,7 @@ alert = ("用户名或密码错误，请重试；");</script> ';
     function check() {
         var unreg = /[^A-Za-z0-9]/;
 
-        if (unreg.test(un.value) || unreg.test(pw1.value) || pw1.value !== pw2.value) {
-            console.log(1312);
+        if (unreg.test(un.value) || unreg.test(pw1.value)) {
             return false;
         } else if (un.value.length < 5 || pw1.value.length < 6) {
             return false;
