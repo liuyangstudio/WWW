@@ -73,6 +73,23 @@ if (isset($_POST['sub'])) {
             box-shadow: 0 2px 5px #c3c3c3;
             margin-top: 25px;
         }
+        .login a {
+            padding: 2px 5px;
+            border: 1px solid #d7d7d7;
+            background-color: #e2e2e2;
+            border-radius: 9px;
+        }
+
+        .login a:hover {
+            background-color: #ff8d00;
+            color: #fff;
+        }
+
+        .login {
+            margin-bottom: 5px;
+            float: right;
+            margin-right: 150px;
+        }
 
         .register {
             width: 1000px;
@@ -162,7 +179,7 @@ if (isset($_POST['sub'])) {
 <body>
 <header>
     <h1>登录</h1>
-
+    <p class="login">还没有帐号，马上去<a href="Register.php">注册</a></p>
     <p class="line"></p>
 
 
