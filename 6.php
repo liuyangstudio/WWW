@@ -1,74 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<form action="6.php" method="post">
+<form action="6.php" method="post" enctype="multipart/form-data" >
+    <input type="file" name="myfile">
+    <input type="submit" value="上传文件">
 
 
-    <input type="text" name="u">
-    <input type="text" name="a">
-<input type="submit" name="sub" value="查询">
-    <input type="text" name="q">
-    <input type="text" name="w">
-    <input type="submit" name="sub2" value="插入">
+
+
 </form>
+
 </body>
 <script>
+
 </script>
 </html>
 <?php
-if (isset($_POST['sub2'])) {
-    $user=$_POST['q'];
-    $age=$_POST['w'];
 
-
-    $link=mysqli_connect('localhost','root','84708597','test');
-
-    $str='insert t1 values("'.$user.'","'.$age.'")';
-    mysqli_query($link,$str);
-
-
-
-
-
-    mysqli_close($link);
-
-
-
-}
-
-
-
-
-
-
-
-
-if (isset($_POST['sub'])) {
-    $user = $_POST['u'];
-    $age=$_POST['a'];
-
-
-    $link=mysqli_connect('localhost','root','84708597','test');
-
-    $str='SELECT * FROM t1 WHERE user="'.$user.'"AND age="'.$age.'" ';
-    $data=mysqli_query($link,$str);
-    $arr=mysqli_fetch_all($data,MYSQLI_ASSOC);
-
-    if ($arr) {
-        echo 'ok';
-
-    }else
-    {echo 'fail!!!!!';}
-
-
-    mysqli_close($link);
-
-
-}
+print_r($_FILES);
+$tmp_name=$_FILES['myfile']['tmp_name'];
+echo $tmp_name;
 
 
 ?>
+

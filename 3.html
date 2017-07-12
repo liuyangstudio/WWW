@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-decoration: none;
+            background-color: #c3c3c3;
+            transition: 300ms;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .active,
+        a:hover {
+            width: 50px;
+            height: 30px;
+            background-color: #00b3ff;
+            color: #FFFFFF;
+        }
+
+        .item {
+            height: 768px;
+            width: 1024px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        ul {
+            position: fixed;
+            left: 50%;
+            top: 400px;
+            margin-left: 512px;
+        }
+
+        li {
+            list-style: none;
+
+            margin-top: 3px;
+            line-height: 30px;
+            text-align: center;
+
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul id="floor">
+        <li><a href="#item1">1F</a></li>
+        <li><a href="#item2">2F</a></li>
+        <li><a href="#item3">3F</a></li>
+        <li><a href="#item4">4F</a></li>
+        <li><a href="#item5">5F</a></li>
+    </ul>
+</div>
+
+<div id="item1" class="item "><a href="javascript:">1F</a><img src="lunbotu/golf (1).jpg" height="768" width="1024"/>
+</div>
+<div id="item2" class="item"><a href="javascript:">2F</a><img src="lunbotu/golf (2).jpg" height="768" width="1024"/>
+</div>
+<div id="item3" class="item"><a href="javascript:">3F</a><img src="lunbotu/golf (3).jpg" height="768" width="1024"/>
+</div>
+<div id="item4" class="item"><a href="javascript:">4F</a><img src="lunbotu/golf (4).jpg" height="768" width="1024"/>
+</div>
+<div id="item5" class="item"><a href="javascript:">5F</a><img src="lunbotu/golf (5).jpg" height="768" width="1024"/>
+</div>
+javascript:
+
+<script>
+    window.onscroll = function () {
+        var top = document.documentElement.scrollTop || document.body.scrollTop;
+        var f = document.getElementById("floor").getElementsByTagName("a");
+        var item = document.getElementsByClassName("item");
+
+        for (var i = 0; i < item.length; i++) {
+            var flag;
+            if (top > item[i].offsetTop - 150) {
+                flag = i;
+            } else {
+                break;
+            }
+            console.log(flag);
+        }
+        for (var i = 0; i < f.length; i++) {
+            f[i].className = ""
+        }
+        f[flag].className = 'active';
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,157 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>LYStudio</title>
 </head>
-<body>
-<div class="lds-css ng-scope">
-    <div style="width:100%;height:100%" class="lds-pacman">
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
+<body >
+<div style="width:200px;margin: 0 auto">
+    <div class="lds-css ng-scope">
+        <div style="width:100%;height:100%" class="lds-pacman">
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
-        <div>
-            <div></div>
-            <div></div>
-        </div>
+        <style type="text/css">@keyframes lds-pacman-1 {
+                                   0% {
+                                       -webkit-transform: rotate(0deg);
+                                       transform: rotate(0deg);
+                                   }
+                                   50% {
+                                       -webkit-transform: rotate(-45deg);
+                                       transform: rotate(-45deg);
+                                   }
+                                   100% {
+                                       -webkit-transform: rotate(0deg);
+                                       transform: rotate(0deg);
+                                   }
+                               }
+
+        @-webkit-keyframes lds-pacman-1 {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes lds-pacman-2 {
+            0% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            50% {
+                -webkit-transform: rotate(225deg);
+                transform: rotate(225deg);
+            }
+            100% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+        @-webkit-keyframes lds-pacman-2 {
+            0% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            50% {
+                -webkit-transform: rotate(225deg);
+                transform: rotate(225deg);
+            }
+            100% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+        @keyframes lds-pacman-3 {
+            0% {
+                -webkit-transform: translate(190px, 0);
+                transform: translate(190px, 0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: translate(70px, 0);
+                transform: translate(70px, 0);
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes lds-pacman-3 {
+            0% {
+                -webkit-transform: translate(190px, 0);
+                transform: translate(190px, 0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: translate(70px, 0);
+                transform: translate(70px, 0);
+                opacity: 1;
+            }
+        }
+
+        .lds-pacman {
+            position: relative;
+        }
+
+        .lds-pacman > div:nth-child(2) div {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 120px;
+            height: 60px;
+            border-radius: 120px 120px 0 0;
+            background: #c5523f;
+            -webkit-animation: lds-pacman-1 1s linear infinite;
+            animation: lds-pacman-1 1s linear infinite;
+            -webkit-transform-origin: 60px 60px;
+            transform-origin: 60px 60px;
+        }
+
+        .lds-pacman > div:nth-child(2) div:nth-child(2) {
+            -webkit-animation: lds-pacman-2 1s linear infinite;
+            animation: lds-pacman-2 1s linear infinite;
+        }
+
+        .lds-pacman > div:nth-child(1) div {
+            position: absolute;
+            top: 92px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #f2b736;
+            -webkit-animation: lds-pacman-3 1s linear infinite;
+            animation: lds-pacman-3 1s linear infinite;
+        }
+
+        .lds-pacman > div:nth-child(1) div:nth-child(1) {
+            -webkit-animation-delay: -0.67s;
+            animation-delay: -0.67s;
+        }
+
+        .lds-pacman > div:nth-child(1) div:nth-child(2) {
+            -webkit-animation-delay: -0.33s;
+            animation-delay: -0.33s;
+        }
+
+        .lds-pacman > div:nth-child(1) div:nth-child(3) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+
+        .lds-pacman {
+            width: 200px !important;
+            height: 200px !important;
+            -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+            transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+        }
+        </style>
     </div>
-    <style type="text/css">@keyframes lds-pacman-1 {
-                               0% {
-                                   -webkit-transform: rotate(0deg);
-                                   transform: rotate(0deg);
+    <div class="lds-css ng-scope">
+        <div style="width:100%;height:100%" class="lds-disk">
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <style type="text/css">@keyframes lds-disk {
+                                   0% {
+                                       -webkit-transform: rotate(0deg);
+                                       transform: rotate(0deg);
+                                   }
+                                   100% {
+                                       -webkit-transform: rotate(360deg);
+                                       transform: rotate(360deg);
+                                   }
                                }
-                               50% {
-                                   -webkit-transform: rotate(-45deg);
-                                   transform: rotate(-45deg);
+        @-webkit-keyframes lds-disk {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        .lds-disk {
+            position: relative;
+        }
+        .lds-disk > div div:nth-child(1) {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #e15b64;
+        }
+        .lds-disk > div div:nth-child(2) {
+            position: absolute;
+            top: 39.800000000000004px;
+            left: 79px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #f47e60;
+            -webkit-animation: lds-disk 1s linear infinite;
+            animation: lds-disk 1s linear infinite;
+            -webkit-transform-origin: 21px 60.199999999999996px;
+            transform-origin: 21px 60.199999999999996px;
+        }
+        .lds-disk {
+            width: 200px !important;
+            height: 200px !important;
+            -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+            transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+        }
+        </style></div>
+    <div class="lds-css ng-scope">
+        <div class="lds-gear" style="height:100%"><div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+        <style type="text/css">@keyframes lds-gear {
+                                   0% {
+                                       -webkit-transform: rotate(0deg);
+                                       transform: rotate(0deg);
+                                   }
+                                   50% {
+                                       -webkit-transform: rotate(180deg);
+                                       transform: rotate(180deg);
+                                   }
+                                   100% {
+                                       -webkit-transform: rotate(360deg);
+                                       transform: rotate(360deg);
+                                   }
                                }
-                               100% {
-                                   -webkit-transform: rotate(0deg);
-                                   transform: rotate(0deg);
-                               }
-                           }
-    @-webkit-keyframes lds-pacman-1 {
-        0% {
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+        @-webkit-keyframes lds-gear {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
         }
-        50% {
-            -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+        .lds-gear > div {
+            -webkit-transform-origin: 100px 100px;
+            transform-origin: 100px 100px;
+            -webkit-animation: lds-gear 2.5s infinite linear;
+            animation: lds-gear 2.5s infinite linear;
+            position: relative;
         }
-        100% {
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+        .lds-gear > div div {
+            position: absolute;
+            width: 26px;
+            height: 192px;
+            background: #fcb711;
+            left: 100px;
+            top: 100px;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
-    }
-    @keyframes lds-pacman-2 {
-        0% {
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+        .lds-gear > div div:nth-child(1) {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
         }
-        50% {
-            -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+        .lds-gear > div div:nth-child(3) {
+            -webkit-transform: translate(-50%, -50%) rotate(30deg);
+            transform: translate(-50%, -50%) rotate(30deg);
         }
-        100% {
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+        .lds-gear > div div:nth-child(4) {
+            -webkit-transform: translate(-50%, -50%) rotate(60deg);
+            transform: translate(-50%, -50%) rotate(60deg);
         }
-    }
-    @-webkit-keyframes lds-pacman-2 {
-        0% {
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+        .lds-gear > div div:nth-child(5) {
+            -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg);
         }
-        50% {
-            -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+        .lds-gear > div div:nth-child(6) {
+            -webkit-transform: translate(-50%, -50%) rotate(120deg);
+            transform: translate(-50%, -50%) rotate(120deg);
         }
-        100% {
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+        .lds-gear > div div:nth-child(7) {
+            -webkit-transform: translate(-50%, -50%) rotate(150deg);
+            transform: translate(-50%, -50%) rotate(150deg);
         }
-    }
-    @keyframes lds-pacman-3 {
-        0% {
-            -webkit-transform: translate(190px, 0);
-            transform: translate(190px, 0);
-            opacity: 0;
+        .lds-gear > div div:nth-child(8) {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
         }
-        20% {
-            opacity: 1;
+        .lds-gear {
+            width: 200px !important;
+            height: 200px !important;
+            -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+            transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
         }
-        100% {
-            -webkit-transform: translate(70px, 0);
-            transform: translate(70px, 0);
-            opacity: 1;
-        }
-    }
-    @-webkit-keyframes lds-pacman-3 {
-        0% {
-            -webkit-transform: translate(190px, 0);
-            transform: translate(190px, 0);
-            opacity: 0;
-        }
-        20% {
-            opacity: 1;
-        }
-        100% {
-            -webkit-transform: translate(70px, 0);
-            transform: translate(70px, 0);
-            opacity: 1;
-        }
-    }
-    .lds-pacman {
-        position: relative;
-    }
-    .lds-pacman > div:nth-child(2) div {
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        width: 120px;
-        height: 60px;
-        border-radius: 120px 120px 0 0;
-        background: #c5523f;
-        -webkit-animation: lds-pacman-1 1s linear infinite;
-        animation: lds-pacman-1 1s linear infinite;
-        -webkit-transform-origin: 60px 60px;
-        transform-origin: 60px 60px;
-    }
-    .lds-pacman > div:nth-child(2) div:nth-child(2) {
-        -webkit-animation: lds-pacman-2 1s linear infinite;
-        animation: lds-pacman-2 1s linear infinite;
-    }
-    .lds-pacman > div:nth-child(1) div {
-        position: absolute;
-        top: 92px;
-        left: -8px;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: #f2b736;
-        -webkit-animation: lds-pacman-3 1s linear infinite;
-        animation: lds-pacman-3 1s linear infinite;
-    }
-    .lds-pacman > div:nth-child(1) div:nth-child(1) {
-        -webkit-animation-delay: -0.67s;
-        animation-delay: -0.67s;
-    }
-    .lds-pacman > div:nth-child(1) div:nth-child(2) {
-        -webkit-animation-delay: -0.33s;
-        animation-delay: -0.33s;
-    }
-    .lds-pacman > div:nth-child(1) div:nth-child(3) {
-        -webkit-animation-delay: 0s;
-        animation-delay: 0s;
-    }
-    .lds-pacman {
-        width: 200px !important;
-        height: 200px !important;
-        -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
-        transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
-    }
-    </style></div>
+        </style></div>
+</div>
 </body>
 </html>
