@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>LYS</title>
+    <style>
+        body {
+            width: 40%;
+            margin: 200px auto;
+
+        }
+
+        form {
+            float: left;
+            border-right: 2px solid #c3c3c3;
+
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            width: 120px;
+            height: 220px;
+            border-radius: 5px;
+            background-color: #00b3ff;
+            line-height: 220px;
+            text-align: center;
+            margin-right: 300px;
+
+        }
+
+        input {
+            margin: 30px;
+        }
+
+        div {
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data" action="upload.php">
+    <input type="text" name="title" placeholder="请输入标题" maxlength="20" size="20" required><br>
+    <input type="file" name="myfile" accept="image/jpeg,image/png,image/gif" required><br>
+
+    <input type="submit" value="我要上传" name="sub">
+
+
+</form>
+
+<div>
+    <a href="show.php">查看我的图片</a>
+</div>
+</body>
+</html>
