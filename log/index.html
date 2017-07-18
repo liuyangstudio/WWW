@@ -15,7 +15,22 @@
         }
 
         td {
+            width: 100px;
             text-align: right;
+        }
+
+        td:nth-child(n+3) {
+            text-align: left;
+            width: 300px;
+        }
+
+        #info {
+            color: #00b3ff;
+        }
+
+        #username {
+            box-shadow: none;
+            outline: none;
         }
     </style>
 </head>
@@ -26,20 +41,18 @@
         <tr>
             <td>用户名</td>
             <td><input type="text" name="username" id="username"></td>
-            <td><span id="warn"></span></td>
+            <td><span id="info"></span></td>
         </tr>
         <tr>
             <td>密码</td>
             <td>
                 <input type="password" name="passwd"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td><input type="submit" name="submit" value="注册">
             </td>
-        </tr>
-        <tr>
-            <td></td>
             <td></td>
         </tr>
 
@@ -60,9 +73,17 @@
 
             if (request.readyState === 4) {
                 if (request.status === 200) {
+                    $data = request.responseText;
+                    if ($data === "1") {
+                        document.getElementById('info').innerHTML = '用户已存在';
+                        document.getElementById('info').style.color = "red";
+                        document.getElementById('username').style.border = "2px solid red";
+                    } else if ($data === "0") {
+                        document.getElementById('info').innerHTML = 'ok';
+                        document.getElementById('info').style.color = "green";
+                        document.getElementById('username').style.border = "2px solid green";
 
-
-                    document.getElementById('warn').innerHTML = request.responseText;
+                    }
                 }
             }
 

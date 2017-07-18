@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>我的菜单</title>
+    <style>
+        *{
+            margin: 0;
+
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <form action="add.php" method="post">
+        <div>
+            <label for="breakfast">早饭</label> <input id="breakfast" type="radio" name="t" value="1" checked>
+            <label for="lunch">午饭</label> <input id="lunch" type="radio" name="t" value="2">
+            <label for="dinner">晚饭</label> <input id="dinner" type="radio" name="t" value="3">
+        </div>
+        <div>
+            <label for="mantou">馒头</label><input type="checkbox" name="zhushi[0]" value="1" id="mantou">
+            <label for="xifan">稀饭</label><input type="checkbox" name="zhushi[1]" value="2" id="xifan">
+            <label for="mifan">米饭</label><input type="checkbox" name="zhushi[2]" value="3" id="mifan">
+            <label for="jianbing">煎饼</label><input type="checkbox" name="zhushi[3]" value="4" id="jianbing">
+
+
+        </div>
+        <div>
+            主菜<input type="text" name="cai">
+            零食<input type="text" name="ling">
+        </div>
+
+        <input type="submit" value="添加记录" name="sub">
+        
+        
+    </form>
+    <a href="show.php">show my menu</a>
+</header>
+
+</body>
+</html>
