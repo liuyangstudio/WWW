@@ -10,12 +10,11 @@ echo $zhushi;
     $ling = $_POST['ling'];
 
     $pdo=new PDO('mysql:host=localhost;dbname=menu','root','84708597');
-    $sql='INSERT log (type,zhushi,cai,ling,date) VALUES ("'.$type.'","'.$zhushi.'","'.$cai.'","'.$ling.'","'.$time.'")';
-    $data=$pdo->exec($sql);
-    if ($data) {
-        echo 'ok';
-    }else{echo 'fail';}
-
+    $sql='INSERT log (class,zhucai,lingshi,date) VALUES ("'.$type.'","'.$cai.'","'.$ling.'","'.$time.'")';
+    $pdo->exec($sql);
+$sql='select last_insert_id();';
+$data=$pdo->query($sql);
+foreach ($)
 
 }
 
