@@ -4,21 +4,48 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        input{
-            color: #00b3ff;
-           border-color: red;
-        }
+
     </style>
 </head>
 <body>
+<input type="text" id="in">
+<button value="" onclick="tr()">转换</button>
+<textarea name="out" id="out" cols="30" rows="10"></textarea>
 
-<p id="q">hhhhh</p>
+<hr>
+<input type="text" id="inp">
+<button value="" onclick="cut()">截取</button>
+<textarea name="out" id="outp" cols="30" rows="10"></textarea>
 
-<input type="text" id="user">
+
 </body>
 <script>
-    document.getElementById('user').value = "ppp";
-    var p = document.getElementsByTagName('p');
-    p[0].innerHTML='asfgaga';
+
+function tr() {
+    var input = parseInt(document.getElementById('in').value);
+    var out=input.toString(2);
+    console.log(out);
+    document.getElementById('out').innerHTML=pad(out);
+
+}
+//前面缺位补0，凑够8位二进制
+function pad(n) {
+    var i=(n+"").length;
+    while (i++ <8) {
+        n="0"+n;
+    }
+    return n;
+}
+
+
+function cut() {
+    var input = document.getElementById('inp').value;
+    var arr=input.split(",");
+
+    document.getElementById("outp").innerHTML=arr.join("");
+
+}
+
+
 </script>
 </html>

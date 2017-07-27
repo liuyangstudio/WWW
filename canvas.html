@@ -7,14 +7,27 @@
         canvas {
             border: 2px solid black;
         }
+
     </style>
 </head>
 <body>
+
 <canvas id="canvas"></canvas>
+<a  id="a" href="javascript:" onclick="butt()">暂停</a>
 </body>
 <script>
 
+var but=true;
+function butt() {
+    if (but===true) {
+        but=false;
+        document.getElementById('a').innerHTML="恢复";
+    }else {
+        but=true;
+        document.getElementById('a').innerHTML="暂停";
+    }
 
+}
     var canvas = document.getElementById("canvas");
     canvas.width = 1500;
     canvas.height = 800;
@@ -45,6 +58,8 @@ var color=["#ff8d00","#123","#fa45ff","#32a6f7","#4fffdf","#1a1aff","#000000","#
 
 
     function update() {
+        if (but) {
+
         for (var i = 0; i < balls.length; i++) {
             balls[i].x += balls[i].vx;
             balls[i].y += balls[i].vy;
@@ -57,9 +72,12 @@ var color=["#ff8d00","#123","#fa45ff","#32a6f7","#4fffdf","#1a1aff","#000000","#
                 balls[i].x=1500-balls[i].r;
                 balls[i].vx=-balls[i].vx;
             }
+            if (balls[i].x<balls[i].r) {
+                balls[i].vx=-balls[i].vx;
+            }
 
         }
-
+    }
     }
 
 

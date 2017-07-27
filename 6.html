@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <style>
+        canvas {
+            display: block;
+            border: 1px solid #c2c2c2;
+            width: 1500px;
+            margin: 50px auto;
+        }
+
+        input {
+            border: 2px solid #ff9600;
+            color: #2c331e;
+            text-align: center;
+        }
+
+        label {
+            margin-left: 180px;
+        }
+
+        hr {
+            margin: 30px 200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+<hr>
+<label for="input">小球数量：</label><input type="text" size="6" id="input">
+
+</body>
+<script>
+
+    window.onload = function () {
+
+        //字模的16进制字符串
+        var str0 = "0x10,0x04,0x08,0x04,0x08,0x04,0xFF,0xA4,0x02,0x24,0x42,0x24,0x22,0x24,0x14," +
+            "0x24,0x14,0x24,0x08,0x24,0x08,0x24,0x14,0x24,0x24,0x04,0x42,0x04,0x82,0x14,0x00,0x08";//刘
+        var str1 = "0x02,0x08,0x21,0x08,0x11,0x10,0x10,0x00,0x87,0xFC,0x40,0x40,0x40,0x40,0x13,0xF8," +
+            "0x10,0x40,0x20,0x40,0xE7,0xFE,0x20,0x40,0x20,0x40,0x20,0x40,0x20,0x40,0x00,0x40";//洋
+        var str2 = "0x08,0x10,0x08,0x78,0x0B,0xC0,0x10,0x40,0x10,0x40,0x30,0x40,0x30,0x40,0x5F,0xFE," +
+            "0x90,0x40,0x10,0x40,0x10,0x40,0x10,0x40,0x10,0x40,0x10,0x40,0x17,0xFC,0x10,0x00";//任
+
+        var str3 = "0x22,0x08,0x11,0x08,0x11,0x10,0x00,0x20,0x7F,0xFE,0x40,0x02,0x80,0x04,0x1F,0xE0," +
+            "0x00,0x40,0x01,0x80,0xFF,0xFE,0x01,0x00,0x01,0x00,0x01,0x00,0x05,0x00,0x02,0x00";//学
+        var str4 = "0x3F,0xF8,0x01,0x00,0x7F,0xFE,0x41,0x02,0x9D,0x74,0x01,0x00,0x1D,0x70,0x00,0x00," +
+            "0x3E,0xF8,0x22,0x08,0x3E,0xF8,0x20,0x00,0x3E,0xF8,0x20,0x48,0x3E,0x30,0x20,0xCC";//霞
+        //转换为二进制二位数组
+        var fontarr = [];
+        fontarr[0] = trans(str0, 16);
+        fontarr[1] = trans(str1, 16);
+        fontarr[2] = trans(str2, 16);
+        fontarr[3] = trans(str3, 16);
+        fontarr[4] = trans(str4, 16);
+        //小球颜色数组
+        var colors = [
+            "#4aff48",
+            "#b6ff08",
+            "#ffb209",
+            "#fffde3",
+            "#98e7ff",
+            "#ffd27e",
+            "#1ecaff",
+            "#ff0cdc",
+            "#e769ff",
+            "#52f7ff"
+        ];
+
+        var h = 800;
+        var w = 1600;
+        var canvas = document.getElementById("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        var context = canvas.getContext("2d");
+
+        //名字切换
+        var flag = true;
+        setInterval(function () {
+            if (flag === true) {
+                addballs(100, 100, 5, 2);
+                addballs(400, 100, 5, 3);
+                addballs(700, 100, 5, 4);
+                flag = false;
+            } else {
+                addballs(100, 100, 5, 0);
+                addballs(400, 100, 5, 1);
+                flag = true;
+            }
+        }, 2000);
+        //生成动态小球
+        setInterval(function () {
+            updateball();
+            context.clearRect(0, 0, 1600, 800);
+            for (var i = 0; i < balls.length; i++) {
+                context.fillStyle = balls[i].color;
+                context.beginPath();
+                context.arc(balls[i].x, balls[i].y, 5, 0, 2 * Math.PI);
+                context.closePath();
+                context.fill();
+            }
+            if (flag === true) {
+                create(context, 0, 2);
+            } else {
+                create(context, 2, 5);
+            }
+
+            //超出两边范围的小球清除掉
+            var tmp = [];
+            for (var i = 0; i < balls.length; i++) {
+                if (balls[i].x > 4 && balls[i].x < 1595) {
+                    tmp.push(balls[i]);
+                }
+                document.getElementById("input").value = balls.length;
+            }
+            balls = tmp;
+        }, 50);
+
+        //添加新的小球
+        var balls = [];
+        function addballs(x, y, r, n) {
+            for (var i = 0; i < fontarr[n].length; i++) {
+                for (var j = 0; j < fontarr[n][i].length; j++) {
+                    if (fontarr[n][i][j] === "1") {
+                        var ball = {
+                            x: x + j * 2 * (r + 1) + (r + 1),
+                            y: y + i * 2 * (r + 1) + (r + 1),
+                            g: 1.5 + Math.random(),
+                            vx: Math.pow(-1, Math.ceil(Math.random() * 1000)) * 4,
+                            vy: -9,
+                            color: colors[Math.floor(Math.random() * 10)]
+                        }
+                        balls.push(ball);
+                    }
+                }
+            }
+        }
+
+
+        //更新小球运动状态
+        function updateball() {
+            for (var i = 0; i < balls.length; i++) {
+                balls[i].x += balls[i].vx;
+                balls[i].y += balls[i].vy;
+                balls[i].vy += balls[i].g;
+                if (balls[i].y > 800 - 5) {
+                    balls[i].y = 800 - 5;
+                    balls[i].vy = -balls[i].vy * 0.65;
+                }
+            }
+        }
+
+
+        //将16进制字符串转换为2进制数组
+        function trans(str, n) {
+            var arr = str.split(",");
+            var font = '';
+            for (var i = 0; i < arr.length; i++) {
+                var str = pad(parseInt(arr[i]).toString(2));
+                font += str;
+            }
+            var array = [];
+            for (var i = 0; i < n; i++) {
+                array[i] = font.substr(n * i, n).split("");
+            }
+            return array;
+            function pad(n) {
+                var i = (n + "").length;
+                while (i++ < 8) {
+                    n = "0" + n;
+                }
+                return n;
+            }
+
+        }
+
+        //绘制单个汉字
+        function render(cxt, n, x, y, r) {
+            cxt.fillStyle = "#32a6f7";
+            for (var i = 0; i < fontarr[n].length; i++) {
+                for (var j = 0; j < fontarr[n][i].length; j++) {
+                    if (fontarr[n][i][j] === "1") {
+                        cxt.beginPath();
+                        cxt.shadowColor = "#2c331e";
+                        cxt.shadowOffsetX = 1;
+                        cxt.shadowOffsetY = 1;
+                        cxt.arc(x + j * 2 * (r + 1) + (r + 1), y + i * 2 * (r + 1) + (r + 1), r, 0, 2 * Math.PI);
+                        cxt.closePath();
+                        cxt.fill();
+                    }
+                }
+            }
+        }
+
+        //绘制多个汉字
+        function create(cxt, m, n) {
+            for (var i = 0; i < n - m; i++) {
+                render(cxt, m + i, 100 + i * 300, 100, 5);
+            }
+        }
+    };
+
+
+</script>
+</html>
