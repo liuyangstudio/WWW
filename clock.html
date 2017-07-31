@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time</title>
+    <style>
+        canvas {
+            border: 1px solid #c3c3c3;
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    canvas.width = 600;
+    canvas.height = 600;
+
+    //绘制表盘
+    function drawbg() {
+        context.save();
+        context.translate(300, 300);
+        context.beginPath();
+        context.arc(0, 0, 190, 0, 2 * Math.PI);
+        context.lineWidth = 4;
+        context.stroke();
+        //绘制小时数
+        var h = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2];
+        context.font = "22px Arial";
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        h.forEach(function (n, i) {
+            var rad = 2 * Math.PI / 12 * i;
+            var x = Math.cos(rad) * 170;
+            var y = Math.sin(rad) * 170;
+            context.fillText(n, x, y);
+        });
+        //绘制分钟点
+        for (var i = 0; i < 60; i++) {
+            var rad = 2 * Math.PI / 60 * i;
+            var x = Math.cos(rad) * 150;
+            var y = Math.sin(rad) * 150;
+            context.beginPath();
+            if (i % 5 === 0) {
+                context.fillStyle = "#123";
+                context.arc(x, y, 3, 0, 2 * Math.PI);
+            } else {
+                context.fillStyle = "#c2c2c2";
+                context.arc(x, y, 3, 0, 2 * Math.PI);
+            }
+            context.fill();
+        }
+        context.restore();
+    }
+
+    function drawh(hour, minute) {
+        context.save();
+        context.translate(300, 300);
+        context.beginPath();
+        var rad = 2 * Math.PI / 12 * hour;
+        var mrad = 2 * Math.PI / 12 / 60 * minute;
+        context.rotate(rad + mrad);
+        context.lineWidth = 9;
+        context.lineCap = "round";
+        context.moveTo(0, 10);
+        context.lineTo(0, -100);
+        context.stroke();
+        context.restore();
+
+    }
+
+    function drawm(minute) {
+        context.save();
+        context.translate(300, 300);
+        context.beginPath();
+        var rad = 2 * Math.PI / 60 * minute;
+        context.rotate(rad);
+        context.lineCap = "round";
+        context.lineWidth = 7;
+        context.moveTo(0, 10);
+        context.lineTo(0, -130);
+        context.stroke();
+        context.restore();
+
+    }
+
+    function draws(second) {
+        context.save();
+        context.translate(300, 300);
+        context.beginPath();
+        var rad = 2 * Math.PI / 60 * second;
+        context.rotate(rad);
+        context.lineCap = "round";
+        context.lineWidth = 3;
+        context.fillStyle = "#ff000b";
+        context.moveTo(-3, 20);
+        context.lineTo(-1, -160);
+        context.lineTo(1, -160);
+        context.lineTo(3, 20);
+        context.closePath();
+        context.fill();
+        context.restore();
+
+    }
+
+    function drawpoint() {
+        context.save();
+        context.translate(300, 300);
+        context.beginPath();
+        context.arc(0,0,5,0,2*Math.PI);
+        context.fillStyle="#fffde3";
+        context.fill();
+        context.restore();
+    }
+
+    setInterval(function () {
+        context.clearRect(0, 0, 1200, 1200);
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        drawbg();
+        drawm(m);
+        drawh(h, m);
+        draws(s);
+        drawpoint();
+    }, 1000);
+</script>
+</html>

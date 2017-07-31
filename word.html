@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>word</title>
+    <style>
+        #can{
+            margin: 90px;
+            padding: 0;
+            width: 1000px;
+            height: 800px;
+            border: 1px solid #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+<canvas id="can"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("can");
+    var ctx=canvas.getContext("2d");
+    canvas.width=1000;
+    canvas.height=800;
+var flag=false;
+var last={x:0,y:0};
+canvas.onmousedown=function () {
+    flag=true;
+    last.x=event.clientX;
+    last.y=event.clientY;
+};
+canvas.onmouseup=function () {
+    flag=false;
+
+};
+canvas.onmousemove=function () {
+var box=canvas.getBoundingClientRect();
+    var x=event.clientX;
+    var y=event.clientY;
+    if (flag) {
+        ctx.moveTo(last.x-box.left,last.y-box.top);
+        ctx.lineTo(x-box.left,y-box.top);
+        ctx.lineCap="round";
+        last.x=x;
+        last.y=y;
+        ctx.stroke();
+    }
+
+
+};
+canvas.onmouseout=function () {
+    flag=false;
+
+
+}
+
+
+</script>
+
+</html>
