@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<input type="button" id="delete" value="del">
+<input type="button" id="add" value="add">
+<div id="qqq">
+
+</div>
+</body>
+<script>
+    window.onload=function () {
+        var del = document.getElementById('delete');
+        var add = document.getElementById('add');
+        var qqq = document.getElementById('qqq');
+        add.addEventListener("click",function () {
+            var div=document.createElement("div");
+            div.id='www';
+            div.style.backgroundColor="#232323";
+            div.innerHTML = "sdjhfsadhgkjhakjghjkahjk";
+            qqq.appendChild(div);
+
+
+        });
+        del.addEventListener("mouseover",function () {
+            var qq=document.getElementsByTagName("div");
+            qqq.removeChild(qq[1]);
+
+        })
+
+    };
+
+
+</script>
+</html>
