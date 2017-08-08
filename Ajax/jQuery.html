@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.2.1.js"></script>
+</head>
+<body>
+<label for="inpu"></label><input type="text" id="inpu">
+<input type="button" value="change" id="change">
+<input type="text" id="outpu" size="50" max="12">
+
+</body>
+<script>
+
+    $('#inpu').keyup(function () {
+
+        $.ajax({
+            url:
+                'Ajax.php',
+            type:
+                'post',
+            data:
+            'name=' + $('#inpu').val(),
+            success:
+                function (da) {
+                $('#outpu').val(da);
+                console.log(da);
+                }
+        })
+    })
+</script>
+</html>

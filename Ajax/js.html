@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<label for="inpu"></label><input type="text" id="inpu">
+<input type="button" value="change" id="change">
+<input type="text" id="outpu" size="50" max="12">
+
+
+</body>
+<script>
+    document.getElementById('inpu').onkeyup = function () {
+        var data ='name='+ document.getElementById('inpu').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'Ajax.php');
+        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+        xhr.send(data);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    document.getElementById('outpu').value = xhr.responseText;
+
+                }
+            }
+
+        }
+
+
+    }
+</script>
+</html>

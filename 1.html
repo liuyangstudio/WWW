@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+var i=12;
+            $('#a1').on({
+                click:function () {
+                    $('#header').css("backgroundColor","#c3c3c3")
+                },
+                mouseover:function () {
+                    $('#header').css('fontSize',i++)
+                }
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+    <style>
+        #header {
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            background-color: #ff9600;
+            color: #fff;
+
+        }
+
+
+    </style>
 </head>
 <body>
-</body>
-<script>
+<div id="header">
+    <span>qqq</span>
+    当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。
 
-</script>
+</div>
+<input type="button" id="a1" value="b1">
+<input type="button" id="a2" value="b2">
+<input type="button" id="a3" value="b3">
+<input type="button" id="a4" value="b4">
+<input type="button" id="a5" value="b5">
+</body>
 </html>
