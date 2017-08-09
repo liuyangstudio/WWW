@@ -5,36 +5,23 @@
     <title>Title</title>
     <script src="jquery-3.2.1.js"></script>
     <script>
-        $(document).ready(function () {
-var i=12;
-            $('#a1').on({
-                click:function () {
-                    $('#header').css("backgroundColor","#c3c3c3")
-                },
-                mouseover:function () {
-                    $('#header').css('fontSize',i++)
-                }
+        $(document).ready(
+            function () {
+
+                var arr1 = [0, 1, 2, 3];
+                var arr2 = [4, 5, 6, 7, 8, 9];
+                $.merge(arr1,arr2);
+console.log(arr1+'-'+arr2)
 
 
-            });
+            })
 
-
-
-
-
-
-
-
-
-
-
-        });
 
     </script>
     <style>
-        #header {
+        div {
             width: 400px;
-            height: 400px;
+            height: 300px;
             padding: 50px;
             background-color: #ff9600;
             color: #fff;
@@ -46,12 +33,18 @@ var i=12;
 </head>
 <body>
 <div id="header">
+    233
+    <input type="button" id="a1" value="b1">
+    <input type="button" id="a2" value="b2"><br>
     <span>qqq</span>
-    当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。
+    <p>当DOM载入就绪可以查询及操纵时绑定一个要执行的函数。</p>
 
 </div>
-<input type="button" id="a1" value="b1">
-<input type="button" id="a2" value="b2">
+<div>
+
+</div>
+
+<br>
 <input type="button" id="a3" value="b3">
 <input type="button" id="a4" value="b4">
 <input type="button" id="a5" value="b5">
